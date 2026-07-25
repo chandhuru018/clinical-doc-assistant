@@ -97,7 +97,7 @@ with st.sidebar:
     visit_type = st.selectbox("Visit Type", ["General", "Follow-up", "New Patient", "Urgent Care"])
 
     st.divider()
-   model_options = ["Cloud (Groq — Llama 3.3 70B)"]
+    model_options = ["Cloud (Groq — Llama 3.3 70B)"]
     if LOCAL_MODEL_AVAILABLE:
         model_options.append("Local (fine-tuned, offline)")
     model_choice = st.radio(
