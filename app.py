@@ -4,7 +4,11 @@ import pandas as pd
 from datetime import date
 from src.transcript_loader import clean_transcript
 from src.soap_generator import generate_soap_note
-from src.local_model import generate_soap_note_local
+try:
+    from src.local_model import generate_soap_note_local
+    LOCAL_MODEL_AVAILABLE = True
+except ImportError:
+    LOCAL_MODEL_AVAILABLE = False
 from src.soap_parser import parse_soap_sections
 from src.audio_transcriber import transcribe_audio
 from src.entity_extractor import extract_medical_entities
@@ -93,10 +97,12 @@ with st.sidebar:
     visit_type = st.selectbox("Visit Type", ["General", "Follow-up", "New Patient", "Urgent Care"])
 
     st.divider()
-    st.header("Model")
+   model_options = ["Cloud (Groq — Llama 3.3 70B)"]
+    if LOCAL_MODEL_AVAILABLE:
+        model_options.append("Local (fine-tuned, offline)")
     model_choice = st.radio(
         "Note generation model",
-        ["Cloud (Groq — Llama 3.3 70B)", "Local (fine-tuned, offline)"],
+        model_options,
         help="Local model runs fully offline on your CPU. Slower, and may occasionally invent minor details not in the transcript — always review before saving.",
     )
 
