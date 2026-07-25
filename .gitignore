@@ -1,0 +1,26 @@
+# Environment / secrets
+.env
+
+# Virtual environment
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Large model files (too big for GitHub, and shouldn't be public anyway)
+models/*.gguf
+models/*.zip
+
+# Streamlit
+.streamlit/secrets.toml
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Dataset (fetch separately, see README)
+data/
+
+# Leftover test files
+test_output.txt
