@@ -2,7 +2,7 @@
 
 An AI-powered tool that converts doctor-patient conversation transcripts (typed or audio) into structured, editable SOAP notes — with multilingual support and an offline-capable fine-tuned model for low-connectivity settings.
 
-**🔗 Live demo:** [clinical-doc-assistant-aynawsb5uagbjxz3tw4db5.streamlit.app](https://clinical-doc-assistant-aynawsb5uagbjxz3tw4db5.streamlit.app)
+**🔗 Live demo:** [clinical-doc-assistant.streamlit.app]** https://clinical-doc-assistant.streamlit.app
 
 > ⚠️ This tool generates AI drafts only. All output must be reviewed by a qualified clinician before being added to an official patient record.
 
@@ -41,7 +41,7 @@ The local model can't be deployed to the public website — Streamlit Community 
 - **Cloud LLM:** Groq API (Llama 3.3 70B for generation, Whisper large-v3 for transcription/translation)
 - **Local LLM:** Fine-tuned Llama 3.2 3B, converted to GGUF, run via `llama-cpp-python`
 - **Fine-tuning:** QLoRA (via Unsloth) on the [MTS-Dialog](https://github.com/abachaa/MTS-Dialog) dataset (~9,600 examples), trained on a free Colab T4 GPU
-- **NER:** `d4data/biomedical-ner-all` (ClinicalBERT) via 🤗 Transformers
+- **NER:** `d4data/biomedical-ner-all` (ClinicalBERT) via  Transformers
 - **NLP preprocessing:** spaCy
 - **Document export:** python-docx
 - **Evaluation:** ROUGE (via `rouge_score`)
@@ -136,8 +136,3 @@ To obtain the training dataset:
 git clone https://github.com/abachaa/MTS-Dialog.git data/MTS-Dialog
 ```
 
----
-
-## License
-
-*(Add your preferred license here, e.g., MIT)*
