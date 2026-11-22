@@ -32,7 +32,7 @@ Transcript:
 SOAP Note:
 """
 
-def generate_soap_note(transcript: str, model: str = "llama-3.3-70b-versatile") -> str:
+def generate_soap_note(transcript: str, model: str = "openai/gpt-oss-120b") -> str:
     prompt = SOAP_PROMPT_TEMPLATE.format(transcript=transcript)
     response = client.chat.completions.create(
         model=model,
